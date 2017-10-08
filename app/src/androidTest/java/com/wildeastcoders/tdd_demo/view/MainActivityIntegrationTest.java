@@ -1,9 +1,10 @@
-package com.wildeastcoders.tdd_demo;
+package com.wildeastcoders.tdd_demo.view;
 
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.wildeastcoders.tdd_demo.view.MainActivity;
+import com.wildeastcoders.tdd_demo.R;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -26,7 +27,7 @@ public class MainActivityIntegrationTest {
 
     @Test
     public void testButtonClickedChangesText() throws Exception {
-        onView(withId(R.id.btnSubmit)).perform(click());
+        onView(ViewMatchers.withId(R.id.btnSubmit)).perform(click());
 
         onView(withId(R.id.tvText)).check(matches(withText("123")));
     }

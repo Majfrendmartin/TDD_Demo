@@ -5,15 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.wildeastcoders.tdd_demo.R;
+import com.wildeastcoders.tdd_demo.presenter.MainActivityPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainActivityView {
 
     @BindView(R.id.tvText)
     TextView tvText;
+
+    MainActivityPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
