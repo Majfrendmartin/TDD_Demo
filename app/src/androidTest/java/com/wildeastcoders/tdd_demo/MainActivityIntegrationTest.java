@@ -3,6 +3,8 @@ package com.wildeastcoders.tdd_demo;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.wildeastcoders.tdd_demo.view.MainActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wildeastcoders.tdd_demo.MainActivity">
+    tools:context="com.wildeastcoders.tdd_demo.view.MainActivity">
 
     <TextView
         android:id="@+id/tvText"
