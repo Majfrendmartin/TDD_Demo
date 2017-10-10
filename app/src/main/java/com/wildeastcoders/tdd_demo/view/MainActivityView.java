@@ -5,4 +5,5 @@ package com.wildeastcoders.tdd_demo.view;
  */
 
 public interface MainActivityView extends View {
+    void updateText();
 }

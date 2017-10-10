@@ -7,4 +7,5 @@ import com.wildeastcoders.tdd_demo.view.MainActivityView;
  */
 
 public interface MainActivityPresenter extends Presenter<MainActivityView> {
+    void onButtonClicked();
 }
