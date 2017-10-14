@@ -3,6 +3,7 @@ package com.wildeastcoders.tdd_demo.view;
 import com.wildeastcoders.tdd_demo.BuildConfig;
 import com.wildeastcoders.tdd_demo.inject.module.ActivityModule;
 import com.wildeastcoders.tdd_demo.presenter.MainActivityPresenter;
+import com.wildeastcoders.tdd_demo.usecase.ProduceTextUsecase;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -45,7 +46,7 @@ public class MainActivityTest {
         }
 
         @Override
-        public MainActivityPresenter provideMainActivityPresenter() {
+        public MainActivityPresenter provideMainActivityPresenter(ProduceTextUsecase produceTextUsecase) {
             return presenter;
         }
     }
@@ -71,8 +72,9 @@ public class MainActivityTest {
     @Test
     public void updateTextCall() throws Exception {
         final MainActivity mainActivity = getCreatedMainActivity();
-        mainActivity.updateText();
-        assertThat(mainActivity.tvText.getText().toString()).isEqualTo("123");
+        final String text = "text";
+        mainActivity.updateText(text);
+        assertThat(mainActivity.tvText.getText().toString()).isEqualTo(text);
 
     }
 

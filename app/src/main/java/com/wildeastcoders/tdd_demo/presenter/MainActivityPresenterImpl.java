@@ -1,5 +1,6 @@
 package com.wildeastcoders.tdd_demo.presenter;
 
+import com.wildeastcoders.tdd_demo.usecase.ProduceTextUsecase;
 import com.wildeastcoders.tdd_demo.view.MainActivityView;
 
 /**
@@ -7,12 +8,23 @@ import com.wildeastcoders.tdd_demo.view.MainActivityView;
  */
 
 public class MainActivityPresenterImpl implements MainActivityPresenter {
-    MainActivityView view;
+    private final ProduceTextUsecase produceTextUsecase;
+    /*package*/ MainActivityView view;
+
+
+    public MainActivityPresenterImpl(ProduceTextUsecase produceTextUsecase) {
+        this.produceTextUsecase = produceTextUsecase;
+    }
 
     @Override
     public void onButtonClicked() {
+        produceTextUsecase.execute()
+                .subscribe(this::handleUpdateText);
+    }
+
+    private void handleUpdateText(String text) {
         if (isViewBound()) {
-            view.updateText();
+            view.updateText(text);
         }
     }
 

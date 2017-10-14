@@ -1,6 +1,7 @@
 package com.wildeastcoders.tdd_demo.view;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityView 
     }
 
     @Override
-    public void updateText() {
-        tvText.setText("123");
+    public void updateText(@NonNull String text) {
+        tvText.setText(text);
     }
 }
